@@ -1,4 +1,4 @@
-Tindahan: Lola's Ledger
+Tindahan: Lola's Pamana
 
 Game Design Document. GAMDES1, first semester 2026 to 2027.
 
