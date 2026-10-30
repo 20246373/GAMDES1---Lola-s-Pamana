@@ -47,8 +47,7 @@ offset_bottom = 190.0
 theme_override_colors/font_color = Color(1, 0.92, 0.78, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 58
-text = "Tindahan:
-Lola's Pamana"
+text = "Tindahan:\nLola's Pamana"
 
 [node name="Tagline" type="Label" parent="."]
 layout_mode = 0
