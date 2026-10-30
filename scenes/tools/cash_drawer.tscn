@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/cash_drawer.gd" id="1_drawer"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drawer"]
+size = Vector2(150, 58)
+
+[node name="CashDrawer" type="Area2D"]
+z_index = 5
+script = ExtResource("1_drawer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_drawer")

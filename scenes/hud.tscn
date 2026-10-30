@@ -1,0 +1,213 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_hud"]
+
+[sub_resource type="Gradient" id="Gradient_under"]
+colors = PackedColorArray(0.12, 0.1, 0.12, 1, 0.18, 0.15, 0.18, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_under"]
+gradient = SubResource("Gradient_under")
+width = 150
+height = 16
+
+[sub_resource type="Gradient" id="Gradient_fill"]
+colors = PackedColorArray(0.85, 0.85, 0.85, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fill"]
+gradient = SubResource("Gradient_fill")
+width = 150
+height = 16
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.04, 0.03, 0.05, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.3, 0.2, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="HUD" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_hud")
+
+[node name="TopPanel" type="Panel" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 790.0
+offset_bottom = 52.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="ClockPanel" type="Panel" parent="."]
+offset_left = 900.0
+offset_top = 8.0
+offset_right = 1142.0
+offset_bottom = 52.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="CaptionPanel" type="Panel" parent="."]
+visible = false
+offset_left = 190.0
+offset_top = 60.0
+offset_right = 1028.0
+offset_bottom = 124.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Pesos" type="Label" parent="."]
+offset_left = 22.0
+offset_top = 15.0
+offset_right = 132.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(1, 0.88, 0.5, 1)
+text = "PHP 70"
+
+[node name="SanityName" type="Label" parent="."]
+offset_left = 138.0
+offset_top = 17.0
+offset_right = 200.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 16
+text = "Sanity"
+
+[node name="Sanity" type="TextureProgressBar" parent="."]
+offset_left = 196.0
+offset_top = 22.0
+offset_right = 316.0
+offset_bottom = 38.0
+mouse_filter = 2
+value = 100.0
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture2D_under")
+texture_progress = SubResource("GradientTexture2D_fill")
+tint_progress = Color(0.9, 0.3, 0.3, 1)
+
+[node name="SanityValue" type="Label" parent="."]
+offset_left = 322.0
+offset_top = 17.0
+offset_right = 366.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 16
+text = "100"
+
+[node name="BatteryName" type="Label" parent="."]
+offset_left = 370.0
+offset_top = 17.0
+offset_right = 400.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 16
+text = "UV"
+
+[node name="Battery" type="TextureProgressBar" parent="."]
+offset_left = 398.0
+offset_top = 22.0
+offset_right = 518.0
+offset_bottom = 38.0
+mouse_filter = 2
+value = 100.0
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture2D_under")
+texture_progress = SubResource("GradientTexture2D_fill")
+tint_progress = Color(0.62, 0.42, 1, 1)
+
+[node name="BatteryValue" type="Label" parent="."]
+offset_left = 524.0
+offset_top = 17.0
+offset_right = 576.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 16
+text = "100%"
+
+[node name="SaltCount" type="Label" parent="."]
+offset_left = 580.0
+offset_top = 15.0
+offset_right = 664.0
+offset_bottom = 45.0
+text = "Salt 3/6"
+
+[node name="UtangLabel" type="Label" parent="."]
+offset_left = 668.0
+offset_top = 17.0
+offset_right = 786.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 16
+text = "Utang PHP 0"
+
+[node name="NightLabel" type="Label" parent="."]
+offset_left = 914.0
+offset_top = 15.0
+offset_right = 1004.0
+offset_bottom = 45.0
+text = "Night 1"
+
+[node name="Clock" type="Label" parent="."]
+offset_left = 1010.0
+offset_top = 15.0
+offset_right = 1132.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0.85, 0.85, 1, 1)
+text = "6:00 PM"
+horizontal_alignment = 2
+
+[node name="Caption" type="Label" parent="."]
+visible = false
+offset_left = 204.0
+offset_top = 64.0
+offset_right = 1016.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 19
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="HintPanel" type="Panel" parent="."]
+offset_left = 664.0
+offset_top = 612.0
+offset_right = 1272.0
+offset_bottom = 712.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Hint" type="Label" parent="."]
+offset_left = 678.0
+offset_top = 618.0
+offset_right = 1260.0
+offset_bottom = 706.0
+theme_override_font_sizes/font_size = 15
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Tags" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+
+[node name="ScanPanel" type="Panel" parent="."]
+visible = false
+offset_left = 1036.0
+offset_top = 58.0
+offset_right = 1272.0
+offset_bottom = 170.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="ScanList" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 1046.0
+offset_top = 64.0
+offset_right = 1266.0
+offset_bottom = 166.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 15
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 3

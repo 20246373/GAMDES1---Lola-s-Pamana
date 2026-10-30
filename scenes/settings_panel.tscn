@@ -1,0 +1,127 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/settings_panel.gd" id="1_set"]
+
+[node name="SettingsPanel" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -300.0
+offset_right = 280.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_set")
+
+[node name="Box" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Heading" type="Label" parent="Box"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="Master" type="HBoxContainer" parent="Box"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Box/Master"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+text = "Master volume"
+
+[node name="Slider" type="HSlider" parent="Box/Master"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 0.8
+
+[node name="Music" type="HBoxContainer" parent="Box"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Box/Music"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+text = "Radio music"
+
+[node name="Slider" type="HSlider" parent="Box/Music"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 0.7
+
+[node name="Effects" type="HBoxContainer" parent="Box"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Box/Effects"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+text = "Sound effects"
+
+[node name="Slider" type="HSlider" parent="Box/Effects"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 0.9
+
+[node name="Brightness" type="HBoxContainer" parent="Box"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Box/Brightness"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+text = "Brightness"
+
+[node name="Slider" type="HSlider" parent="Box/Brightness"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.7
+max_value = 1.8
+step = 0.05
+value = 1.0
+
+[node name="Captions" type="CheckButton" parent="Box"]
+layout_mode = 2
+button_pressed = true
+text = "Captions"
+
+[node name="ReducedScares" type="CheckButton" parent="Box"]
+layout_mode = 2
+text = "Reduced scares"
+
+[node name="LowGraphics" type="CheckButton" parent="Box"]
+layout_mode = 2
+text = "Low graphics"
+
+[node name="ControlHints" type="CheckButton" parent="Box"]
+layout_mode = 2
+button_pressed = true
+text = "Control hints"
+
+[node name="Seed" type="HBoxContainer" parent="Box"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Box/Seed"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+text = "Test seed"
+
+[node name="Edit" type="LineEdit" parent="Box/Seed"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Blank for a new run"
+
+[node name="Back" type="Button" parent="Box"]
+layout_mode = 2
+text = "Back"

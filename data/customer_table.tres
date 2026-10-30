@@ -1,0 +1,424 @@
+[gd_resource type="Resource" script_class="CustomerTable" load_steps=33 format=3]
+
+[ext_resource type="Script" path="res://scripts/customer_table.gd" id="1_table"]
+[ext_resource type="Script" path="res://scripts/customer_row.gd" id="2_row"]
+
+[sub_resource type="Resource" id="n1c1"]
+script = ExtResource("2_row")
+id = "n1c1"
+night = 1
+slot = 1
+kind = "regular"
+regular_id = "mang_ador"
+order = "sardins"
+payment = 50
+line = "Good evening, apo. Sardins, the usual. Rosa likes it with rice."
+teach = "first_serve"
+
+[sub_resource type="Resource" id="n1c2"]
+script = ExtResource("2_row")
+id = "n1c2"
+night = 1
+slot = 2
+kind = "stranger"
+order = "kola"
+payment = 20
+line = "One Kola, please. Cold if you have it."
+teach = "first_uv"
+
+[sub_resource type="Resource" id="n1c3"]
+script = ExtResource("2_row")
+id = "n1c3"
+night = 1
+slot = 3
+kind = "regular"
+regular_id = "mang_ador"
+is_entity = true
+entity_type = "aswang"
+order = "kola"
+payment = 20
+line = "One Kola tonight, apo."
+known_order = "sardins"
+known_line = "Sardins, apo. My wife Carmen is waiting."
+uv_tells = PackedStringArray("cash")
+ledger_tell = true
+teach = "first_entity"
+
+[sub_resource type="Resource" id="n1c4"]
+script = ExtResource("2_row")
+id = "n1c4"
+night = 1
+slot = 4
+kind = "regular"
+regular_id = "ate_joy"
+order = "chipis"
+payment = 20
+line = "Chipis, please. Long night of nursing notes."
+
+[sub_resource type="Resource" id="n2c1"]
+script = ExtResource("2_row")
+id = "n2c1"
+night = 2
+slot = 1
+kind = "regular"
+regular_id = "aling_bebang"
+order = "surp"
+payment = 20
+line = "Surp tonight, apo. I told you I might try something new."
+decoy = "order"
+teach = "decoy"
+
+[sub_resource type="Resource" id="n2c2"]
+script = ExtResource("2_row")
+id = "n2c2"
+night = 2
+slot = 2
+kind = "stranger"
+is_entity = true
+entity_type = "tiktik"
+order = "kornbip"
+payment = 50
+line = "Kornbip. The big can."
+uv_tells = PackedStringArray("face", "cash")
+replaceable = 1
+warn = "fixed"
+teach = "radio_static"
+
+[sub_resource type="Resource" id="n2c3"]
+script = ExtResource("2_row")
+id = "n2c3"
+night = 2
+slot = 3
+kind = "regular"
+regular_id = "kuya_migo"
+order = "7down"
+payment = 0
+line = "Can you write it in Lola's book? The bakery pays me at dawn."
+teach = "utang"
+
+[sub_resource type="Resource" id="n2c4"]
+script = ExtResource("2_row")
+id = "n2c4"
+night = 2
+slot = 4
+kind = "regular"
+regular_id = "aling_nena"
+is_entity = true
+entity_type = "aswang"
+order = "piyatos"
+payment = 20
+line = "Piyatos, please."
+known_order = "kola"
+known_line = "A bottle of Kola for my son Jomar."
+uv_tells = PackedStringArray("face")
+ledger_tell = true
+replaceable = 2
+
+[sub_resource type="Resource" id="n2c5"]
+script = ExtResource("2_row")
+id = "n2c5"
+night = 2
+slot = 5
+kind = "regular"
+regular_id = "mang_ador"
+order = "sardins"
+payment = 50
+line = "Sardins again, apo. Rosa's recipe needs two."
+
+[sub_resource type="Resource" id="n3c1"]
+script = ExtResource("2_row")
+id = "n3c1"
+night = 3
+slot = 1
+kind = "regular"
+regular_id = "pia"
+order = "robisco"
+payment = 10
+line = "Robisco po. Mama sent me before dark."
+decoy = "pool"
+
+[sub_resource type="Resource" id="n3c2"]
+script = ExtResource("2_row")
+id = "n3c2"
+night = 3
+slot = 2
+kind = "regular"
+regular_id = "ate_joy"
+is_entity = true
+entity_type = "aswang"
+order = "robisco"
+payment = 20
+line = "Robisco, please."
+known_order = "chipis"
+known_line = "Chipis. Long week at the bank."
+uv_tells = PackedStringArray("cash")
+ledger_tell = true
+replaceable = 1
+warn = "fixed"
+
+[sub_resource type="Resource" id="n3c3"]
+script = ExtResource("2_row")
+id = "n3c3"
+night = 3
+slot = 3
+kind = "regular"
+regular_id = "kuya_migo"
+order = "7down"
+payment = 20
+line = "7-Down. Just off the oven shift."
+warn = "fixed"
+teach = "false_warning"
+
+[sub_resource type="Resource" id="n3c4"]
+script = ExtResource("2_row")
+id = "n3c4"
+night = 3
+slot = 4
+kind = "stranger"
+order = "kornbip"
+payment = 50
+line = "Kornbip, please."
+decoy = "pool"
+
+[sub_resource type="Resource" id="n3c5"]
+script = ExtResource("2_row")
+id = "n3c5"
+night = 3
+slot = 5
+kind = "regular"
+regular_id = "aling_bebang"
+order = "palmolib"
+payment = 50
+line = "Palmolib, apo. Toto stayed late at the chapel."
+decoy = "pool"
+
+[sub_resource type="Resource" id="n3c6"]
+script = ExtResource("2_row")
+id = "n3c6"
+night = 3
+slot = 6
+kind = "stranger"
+is_entity = true
+entity_type = "kapre"
+order = "sardins"
+payment = 100
+line = "Sardins. Keep the change."
+uv_tells = PackedStringArray("face", "cash")
+replaceable = 2
+teach = "silence"
+
+[sub_resource type="Resource" id="n4c1"]
+script = ExtResource("2_row")
+id = "n4c1"
+night = 4
+slot = 1
+kind = "regular"
+regular_id = "ate_joy"
+order = "chipis"
+payment = 20
+line = "Chipis, please. Review week again."
+tampered_usual = "surp"
+teach = "tamper"
+
+[sub_resource type="Resource" id="n4c2"]
+script = ExtResource("2_row")
+id = "n4c2"
+night = 4
+slot = 2
+kind = "stranger"
+is_entity = true
+entity_type = "tiktik"
+order = "kornbip"
+payment = 50
+line = "Kornbip. Quickly."
+uv_tells = PackedStringArray("face", "cash")
+replaceable = 1
+warn = "pool"
+
+[sub_resource type="Resource" id="n4c3"]
+script = ExtResource("2_row")
+id = "n4c3"
+night = 4
+slot = 3
+kind = "regular"
+regular_id = "mang_ador"
+order = "sardins"
+payment = 50
+line = "Sardins, apo. Rosa says hello."
+warn = "pool"
+decoy = "pool"
+
+[sub_resource type="Resource" id="n4c4"]
+script = ExtResource("2_row")
+id = "n4c4"
+night = 4
+slot = 4
+kind = "regular"
+regular_id = "kuya_migo"
+is_entity = true
+entity_type = "aswang"
+order = "kola"
+payment = 20
+line = "Kola, please."
+known_order = "7down"
+known_line = "7-Down. Long day at the jeepney shop."
+uv_tells = PackedStringArray("face")
+ledger_tell = true
+replaceable = 2
+warn = "pool"
+
+[sub_resource type="Resource" id="n4c5"]
+script = ExtResource("2_row")
+id = "n4c5"
+night = 4
+slot = 5
+kind = "stranger"
+order = "kola"
+payment = 20
+line = "A Kola, please."
+warn = "pool"
+decoy = "pool"
+
+[sub_resource type="Resource" id="n4c6"]
+script = ExtResource("2_row")
+id = "n4c6"
+night = 4
+slot = 6
+kind = "stranger"
+is_entity = true
+entity_type = "manananggal"
+order = "kornbip"
+payment = 50
+line = "Kornbip. I am in a hurry."
+uv_tells = PackedStringArray("face", "cash")
+warn = "pool"
+
+[sub_resource type="Resource" id="n4c7"]
+script = ExtResource("2_row")
+id = "n4c7"
+night = 4
+slot = 7
+kind = "regular"
+regular_id = "aling_nena"
+order = "kola"
+payment = 20
+line = "Kola for Migo. He is on the night oven."
+warn = "pool"
+decoy = "pool"
+
+[sub_resource type="Resource" id="n5c1"]
+script = ExtResource("2_row")
+id = "n5c1"
+night = 5
+slot = 1
+kind = "regular"
+regular_id = "aling_bebang"
+order = "palmolib"
+payment = 50
+line = "Palmolib. Toto walked me to the corner."
+warn = "pool"
+decoy = "pool"
+
+[sub_resource type="Resource" id="n5c2"]
+script = ExtResource("2_row")
+id = "n5c2"
+night = 5
+slot = 2
+kind = "stranger"
+is_entity = true
+entity_type = "kapre"
+order = "sardins"
+payment = 100
+line = "Sardins. Keep the change."
+uv_tells = PackedStringArray("face", "cash")
+replaceable = 1
+warn = "pool"
+
+[sub_resource type="Resource" id="n5c3"]
+script = ExtResource("2_row")
+id = "n5c3"
+night = 5
+slot = 3
+kind = "regular"
+regular_id = "pia"
+order = "robisco"
+payment = 10
+line = "Robisco po. Mingming ran off again."
+warn = "pool"
+decoy = "pool"
+
+[sub_resource type="Resource" id="n5c4"]
+script = ExtResource("2_row")
+id = "n5c4"
+night = 5
+slot = 4
+kind = "regular"
+regular_id = "aling_nena"
+is_entity = true
+entity_type = "aswang"
+order = "kola"
+payment = 20
+line = "Kola for my son Migo."
+known_order = "kola"
+known_line = "Kola for my son Migo."
+uv_tells = PackedStringArray("face", "cash")
+replaceable = 2
+warn = "pool"
+tampered_usual = "surp"
+
+[sub_resource type="Resource" id="n5c5"]
+script = ExtResource("2_row")
+id = "n5c5"
+night = 5
+slot = 5
+kind = "stranger"
+order = "surp"
+payment = 20
+line = "One Surp, please."
+warn = "pool"
+decoy = "pool"
+
+[sub_resource type="Resource" id="n5c6"]
+script = ExtResource("2_row")
+id = "n5c6"
+night = 5
+slot = 6
+kind = "stranger"
+is_entity = true
+entity_type = "tiktik"
+order = "kornbip"
+payment = 50
+line = "Kornbip."
+uv_tells = PackedStringArray("face", "cash")
+warn = "pool"
+
+[sub_resource type="Resource" id="n5c7"]
+script = ExtResource("2_row")
+id = "n5c7"
+night = 5
+slot = 7
+kind = "regular"
+regular_id = "kuya_migo"
+order = "7down"
+payment = 20
+line = "7-Down. The bakery let me out early."
+warn = "pool"
+decoy = "pool"
+
+[sub_resource type="Resource" id="n5c8"]
+script = ExtResource("2_row")
+id = "n5c8"
+night = 5
+slot = 8
+kind = "stranger"
+is_entity = true
+entity_type = "manananggal"
+order = "palmolib"
+payment = 50
+line = "Palmolib. For my sister."
+uv_tells = PackedStringArray("face", "cash")
+warn = "pool"
+
+[resource]
+script = ExtResource("1_table")
+rows = [SubResource("n1c1"), SubResource("n1c2"), SubResource("n1c3"), SubResource("n1c4"), SubResource("n2c1"), SubResource("n2c2"), SubResource("n2c3"), SubResource("n2c4"), SubResource("n2c5"), SubResource("n3c1"), SubResource("n3c2"), SubResource("n3c3"), SubResource("n3c4"), SubResource("n3c5"), SubResource("n3c6"), SubResource("n4c1"), SubResource("n4c2"), SubResource("n4c3"), SubResource("n4c4"), SubResource("n4c5"), SubResource("n4c6"), SubResource("n4c7"), SubResource("n5c1"), SubResource("n5c2"), SubResource("n5c3"), SubResource("n5c4"), SubResource("n5c5"), SubResource("n5c6"), SubResource("n5c7"), SubResource("n5c8")]

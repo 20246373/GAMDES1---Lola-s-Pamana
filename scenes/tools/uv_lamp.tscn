@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/uv_lamp.gd" id="1_uv"]
+[ext_resource type="Script" path="res://scripts/beam.gd" id="2_beam"]
+
+[sub_resource type="Gradient" id="Gradient_light"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_light"]
+gradient = SubResource("Gradient_light")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_beam"]
+radius = 85.0
+
+[node name="UVLamp" type="PointLight2D"]
+z_index = 20
+enabled = false
+color = Color(0.62, 0.36, 1, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_light")
+texture_scale = 0.8
+script = ExtResource("1_uv")
+
+[node name="Beam" type="Area2D" parent="."]
+input_pickable = false
+monitoring = false
+monitorable = false
+script = ExtResource("2_beam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beam"]
+shape = SubResource("CircleShape2D_beam")

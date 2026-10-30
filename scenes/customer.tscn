@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/customer.gd" id="1_cust"]
+[ext_resource type="Script" path="res://scripts/sign_layer.gd" id="2_sign"]
+[ext_resource type="Script" path="res://scripts/cash.gd" id="3_cash"]
+[ext_resource type="Shader" path="res://shaders/uv_reveal.gdshader" id="4_uv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sign"]
+shader = ExtResource("4_uv")
+shader_parameter/beam_pos = Vector2(-9999, -9999)
+shader_parameter/beam_radius = 90.0
+shader_parameter/beam_on = 0.0
+shader_parameter/revealed = 0.0
+
+[sub_resource type="Animation" id="Animation_talk"]
+resource_name = "talk"
+length = 0.36
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:talk_frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_reset"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:talk_frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cust"]
+_data = {
+&"RESET": SubResource("Animation_reset"),
+&"talk": SubResource("Animation_talk")
+}
+
+[node name="Customer" type="Node2D" groups=["uv_target"]]
+z_index = -5
+script = ExtResource("1_cust")
+
+[node name="Body" type="Sprite2D" parent="."]
+centered = false
+
+[node name="SignLayer" type="Sprite2D" parent="."]
+z_index = 11
+material = SubResource("ShaderMaterial_sign")
+script = ExtResource("2_sign")
+
+[node name="Cash" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(92, 32)
+script = ExtResource("3_cash")
+
+[node name="Voice" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cust")
+}

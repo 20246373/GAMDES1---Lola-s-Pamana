@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/salt_jar.gd" id="1_salt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_salt"]
+size = Vector2(100, 136)
+
+[node name="SaltJar" type="Area2D"]
+z_index = 5
+script = ExtResource("1_salt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_salt")

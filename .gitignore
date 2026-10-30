@@ -1,0 +1,5 @@
+# Godot 4 cache and import folder
+.godot/
+*.tmp
+export_presets.cfg
+/build/
